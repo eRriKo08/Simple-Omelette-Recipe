@@ -1,0 +1,192 @@
+// ---------- Design tokens ----------
+$white: #ffffff;
+$stone-100: #f3e5d7;
+$stone-150: #e4ded8;
+$stone-600: #5f564d;
+$stone-900: #302d2c;
+$brown-800: #854632;
+$rose-800: #7b284f;
+$rose-50: #fff7fb;
+
+$radius-lg: 18px;
+$radius-md: 12px;
+$shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+// ---------- Base / reset ----------
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	color: $stone-600;
+	background: $stone-100;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+// ---------- Card layout ----------
+.recipe {
+	max-width: 740px;
+	background: $white;
+	margin: clamp(16px, 6vh, 64px) auto;
+	padding: clamp(20px, 4vw, 40px);
+	border-radius: $radius-lg;
+	box-shadow: $shadow;
+
+	.hero {
+		border-radius: $radius-md;
+		margin-bottom: 24px;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
+
+// ---------- Typography ----------
+h1,
+h2 {
+	font-family: 'Young Serif', serif;
+	color: $stone-900;
+	line-height: 1.2;
+	margin: 0 0 16px;
+}
+
+h1 {
+	font-size: clamp(28px, 4.2vw, 40px);
+}
+h2 {
+	font-size: clamp(22px, 3.2vw, 28px);
+	color: $brown-800;
+}
+p {
+	margin: 0 0 20px;
+}
+
+// ---------- Sections ----------
+.prep {
+	background: $rose-50;
+	border-radius: $radius-md;
+	padding: 18px 22px;
+	margin: 24px 0 28px;
+
+	h3 {
+		margin: 0 0 10px;
+		font-size: 18px;
+		color: $rose-800;
+		font-weight: 600;
+		font-family: 'Outfit', system-ui, sans-serif;
+	}
+
+	ul {
+		padding-left: 20px;
+		margin: 0;
+
+		li {
+			margin: 8px 0;
+
+			&::marker {
+				color: $rose-800;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.ingredients {
+	ul {
+		padding-left: 20px;
+		margin: 0 0 22px;
+
+		li {
+			margin: 8px 0;
+
+			&::marker {
+				color: $brown-800;
+			}
+		}
+	}
+}
+
+.instructions {
+	ol {
+		padding-left: 20px;
+		margin: 0 0 22px;
+
+		li {
+			margin: 8px 0;
+
+			&::marker {
+				color: $brown-800;
+				font-weight: 700;
+			}
+		}
+	}
+
+	b {
+		color: $stone-900;
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid $stone-150;
+	margin: 28px 0;
+}
+
+// ---------- Nutrition table ----------
+.note {
+	margin: -6px 0 16px;
+}
+
+.nutrition {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	tr + tr {
+		border-top: 1px solid $stone-150;
+	}
+
+	td {
+		padding: 14px 8px;
+
+		&:first-child {
+			color: $stone-600;
+			width: 50%;
+			padding-left: 10px;
+		}
+
+		&:last-child {
+			text-align: right;
+			font-weight: 600;
+			color: $brown-800;
+			padding-right: 10px;
+		}
+	}
+}
+
+// ---------- Small tweaks ----------
+@media (max-width: 520px) {
+	.recipe {
+		padding: 20px;
+		border-radius: 0;
+		margin: 0;
+
+		.hero {
+			border-radius: 0;
+			margin: -20px -20px 16px;
+		}
+	}
+}
